@@ -29,21 +29,16 @@ public class Categoria {
 	@Size(min = 5, max = 100, message = "O atributo descricao deve ter no minimo 3 e no máximo 100 caracteres")
 	private String nome;
 	
-	/*
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tema", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties("tema")
-	private List<Postagem> postagem;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "categoria", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("categoria")
+	private List<Produto> produto;
 	
-	
-	public List<Postagem> getPostagem() {
-		return postagem;
+	public List<Produto> getProduto() {
+		return produto;
 	}
-	public void setPostagem(List<Postagem> postagem) {
-		this.postagem = postagem;
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
 	}
-	
-	*/
-	
 	public Long getId() {
 		return id;
 	}
